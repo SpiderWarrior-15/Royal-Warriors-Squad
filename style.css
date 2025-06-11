@@ -3,15 +3,76 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   font-family: 'Segoe UI', sans-serif;
   }
   .h1,nav,ul,li{
     display: inline;
   }
 
   body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+  
+  /* Fantasy animated multicolor background */
+  background: linear-gradient(
+    270deg,
+    #ff6ec4,
+    #7873f5,
+    #4ade80,
+    #facc15,
+    #f97316,
+    #ef4444,
+    #8b5cf6,
+    #ec4899
+  );
+  background-size: 1600% 1600%;
+  animation: fantasyGradient 30s ease infinite;
+  
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Moving gradient animation */
+@keyframes fantasyGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sparkles overlay for fantasy vibe */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient (circle at 10% 20%, rgba(255,255,255,0.8) 2px, transparent 3px),
+    radial-gradient (circle at 80% 40%, rgba(255,255,255,0.6) 1.5px, transparent 3px),
+    radial-gradient (circle at 50% 80%, rgba(255,255,255,0.7) 2px, transparent 3px);
+  background-repeat: no-repeat;
+  animation: sparkleMove 20s linear infinite;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+@keyframes sparkleMove {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 50% 100%, 100% 50%;
+  }
+}
+
   }
   .section {
              background-color: #000000;
