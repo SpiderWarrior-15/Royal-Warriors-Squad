@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RWS | Sign Up</title>
+  <link rel="stylesheet" href="loginstyle.css" />
+</head>
+<body>
+  <div class="login-box">
+    <div class="login-header">
+      <header>Sign Up</header>
+    </div>
+
+    <div class="input-box">
+      <input type="email" id="email" class="input-field" placeholder="Email" autocomplete="off" required />
+    </div>
+
+    <div class="input-box">
+      <input
+        type="password"
+        id="password"
+        class="input-field"
+        placeholder="Password (6+ characters)"
+        autocomplete="off"
+        required
+      />
+    </div>
+
+    <button id="signUpBtn" class="submit-btn">Create Account</button>
+
+    <p id="message" style="color: red; margin-top: 15px;"></p>
+  </div>
+
+  <!-- Firebase JS SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+
+  <script>
+    // Your Firebase config - replace with your actual config from Firebase console
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "your-project-id.firebaseapp.com",
+      projectId: "your-project-id",
+      storageBucket: "your-project-id.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get elements
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const signUpBtn = document.getElementById('signUpBtn');
+    const messageP = document.getElementById('message');
+
+    // Sign up function
+    signUpBtn.addEventListener('click', () => {
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      messageP.textContent = ''; // Clear message
+
+      if (password.length < 6) {
+        messageP.textContent = 'Password must be at least 6 characters long.';
+        return;
+      }
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signed up successfully
+          const user = userCredential.user;
+          messageP.style.color = 'green';
+          messageP.textContent = `Account created for ${user.email}! You can now log in.`;
+          emailInput.value = '';
+          passwordInput.value = '';
+        })
+        .catch((error) => {
+          messageP.style.color = 'red';
+          messageP.textContent = error.message;
+        });
+    });
+  </script>
+</body>
+</html>

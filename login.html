@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RWS | Login</title>
+  <link rel="stylesheet" href="loginstyle.css" />
+</head>
+<body>
+  <div class="login-box" id="form-box">
+    <div class="login-header">
+      <header id="form-title">Login</header>
+    </div>
+    <div class="input-box">
+      <input type="text" class="input-field" placeholder="Email" id="email" autocomplete="off" required />
+    </div>
+    <div class="input-box">
+      <input type="password" class="input-field" placeholder="Password" id="password" autocomplete="off" required />
+    </div>
+    <div class="input-box signup-field" style="display: none;">
+      <input type="password" class="input-field" placeholder="Confirm Password" id="confirm-password" autocomplete="off" />
+    </div>
+    <div class="forgot">
+      <section>
+        <input type="checkbox" id="check" />
+        <label for="check">Remember me</label>
+      </section>
+      <section>
+        <a href="#">Forgot password?</a>
+      </section>
+    </div>
+    <div class="input-submit">
+      <button class="submit-btn" id="submit"></button>
+      <label for="submit" id="submit-label">Sign In</label>
+    </div>
+  <div class="sign-up-link">
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+</div>
+
+      </p>
+    </div>
+  </div>
+
+  <script>
+    let isSignUp = false;
+
+    function toggleForm() {
+      isSignUp = !isSignUp;
+      document.getElementById('form-title').innerText = isSignUp ? 'Sign Up' : 'Login';
+      document.getElementById('submit-label').innerText = isSignUp ? 'Sign Up' : 'Sign In';
+      document.querySelector('.signup-field').style.display = isSignUp ? 'block' : 'none';
+      document.getElementById('toggle-text').innerHTML = isSignUp
+        ? 'Already have an account? <a href="#" onclick="toggleForm()">Sign In</a>'
+        : 'Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a>';
+    }
+
+    // Redirect to RWS main page on submit
+    document.getElementById('submit').addEventListener('click', function () {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Simple check (for demonstration only)
+      if (email && password) {
+        window.location.href = "rws.html"; // 🔁 LINK TO YOUR MAIN PAGE HERE
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+</html>
