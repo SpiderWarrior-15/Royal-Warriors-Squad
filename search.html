@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">🔍 Search Results</h1>
+    </div>
+  </header>
+
+  <section class="results container">
+    <h2 id="search-query-title"></h2>
+    <div id="results-container"></div>
+  </section>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('query').toLowerCase();
+
+    document.getElementById('search-query-title').textContent = `Results for "${query}"`;
+
+    // Dummy data (replace with actual post data or fetch from backend)
+    const contentList = [
+      { title: "AI News", url: "ainews.html" },
+      { title: "Puzzles", url: "puzzles.html" },
+      { title: "Alan Walker Songs", url: "warriors-picks.html" },
+      { title: "Post a Song", url: "post.html" }
+    ];
+
+    const results = contentList.filter(item => item.title.toLowerCase().includes(query));
+
+    const container = document.getElementById('results-container');
+    if (results.length > 0) {
+      results.forEach(item => {
+        const result = document.createElement('div');
+        result.innerHTML = `<a href="${item.url}" class="btn">${item.title}</a>`;
+        container.appendChild(result);
+      });
+    } else {
+      container.innerHTML = "<p>No results found.</p>";
+    }
+  </script>
+</body>
+</html>
 
