@@ -47,6 +47,14 @@
 
   <!-- Header -->
   <header class="header">
+    <div class="album">
+    {% for song in songs %}
+      <div class="song-card">
+        <h2>{{ song[1] }} - {{ song[2] }}</h2>
+        <iframe width="300" height="80" src="{{ song[3] }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    {% endfor %}
+  </div>
     <div class="container">
       <div class="logo">
         <img src="images/logo.png" alt="RWS Logo">
