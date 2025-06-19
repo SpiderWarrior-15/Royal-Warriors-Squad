@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warriors Picks 🎧</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .music-section {
+      padding: 50px 0;
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px #0ea5e9aa;
+    }
+
+    .music-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+
+    .song {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .song iframe, .song audio {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .song-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Splash screen -->
+  <div id="splash">
+    <h1>🎵 Warriors Picks 🎵</h1>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="RWS Logo">
+        RWS Music Picks
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Themes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Music Sections -->
+  <div class="container">
+
+    <section class="music-section">
+      <h2>🔥 Motivation Mix</h2>
+      <div class="song">
+        <div class="song-title">Eminem - Lose Yourself</div>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/_Yhyp-_hX2s" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="song">
+        <div class="song-title">Imagine Dragons - Believer</div>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/7wtfhZwyrcc" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <h2>🌙 Chill Vibes</h2>
+      <div class="song">
+        <div class="song-title">Lofi Chillhop - Relax</div>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/jfKfPfyJRdk" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="music-section">
+      <h2>🏆 Victory Anthems</h2>
+      <div class="song">
+        <div class="song-title">Two Steps From Hell - Victory</div>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/hKRUPYrAQoE" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Royal Warriors Squad. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Splash timeout
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
 
