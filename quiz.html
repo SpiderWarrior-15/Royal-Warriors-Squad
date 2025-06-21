@@ -7,25 +7,38 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="splash">
+    <h1>Royal Warriors Squad</h1>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="RWS Logo">
+        RWS Quiz
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <h1>RWS Knowledge Quiz</h1>
     <form action="/submit-quiz" method="POST">
-      <label>1. What is the capital of Sri Lanka?</label><br>
+      <label>1. What is the capital of Sri Lanka?</label>
       <input type="text" name="q1"><br><br>
 
-      <label>2. Who founded the Royal Warriors Squad?</label><br>
+      <label>2. Who founded the Royal Warriors Squad?</label>
       <input type="text" name="q2"><br><br>
 
-      <label>3. What does AI stand for?</label><br>
+      <label>3. What does AI stand for?</label>
       <input type="text" name="q3"><br><br>
 
-      <label>4. Name any one Alan Walker song:</label><br>
+      <label>4. Name any one Alan Walker song:</label>
       <input type="text" name="q4"><br><br>
 
-      <label>5. What is the color of the RWS logo?</label><br>
+      <label>5. What is the color of the RWS logo?</label>
       <input type="text" name="q5"><br><br>
 
-      <button type="submit">Submit Answers</button>
+      <button type="submit" class="btn">Submit Answers</button>
     </form>
   </div>
 </body>
