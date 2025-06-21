@@ -1,17 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Quiz Review - Admin Panel</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Review – RWS</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #e2e8f0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #38bdf8aa;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #38bdf8;
+    }
+
+    .question-block {
+      margin-bottom: 25px;
+      padding: 15px;
+      border-left: 4px solid #38bdf8;
+      background: #1e293b;
+      border-radius: 8px;
+    }
+
+    .question-block h3 {
+      color: #94a3b8;
+      margin-bottom: 5px;
+    }
+
+    .answer {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .correct {
+      background-color: #10b981;
+      color: #fff;
+    }
+
+    .incorrect {
+      background-color: #ef4444;
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <h1>Submitted Quiz Answers</h1>
-  {% for submission in submissions %}
-    <div style="border:1px solid #999; margin:10px; padding:10px;">
-      {% for key, value in submission.items() %}
-        <p><strong>{{ key }}:</strong> {{ value }}</p>
-      {% endfor %}
+
+  <div class="container">
+    <h1>Review Quiz Submission</h1>
+
+    <div class="question-block">
+      <h3>1. What is the capital of Sri Lanka?</h3>
+      <p class="answer">User Answer: <strong>Colombo</strong></p>
+      <div class="btn-group">
+        <button class="btn correct">Correct</button>
+        <button class="btn incorrect">Incorrect</button>
+      </div>
     </div>
-  {% endfor %}
+
+    <div class="question-block">
+      <h3>2. Who founded the Royal Warriors Squad?</h3>
+      <p class="answer">User Answer: <strong>Faizy</strong></p>
+      <div class="btn-group">
+        <button class="btn correct">Correct</button>
+        <button class="btn incorrect">Incorrect</button>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <h3>3. What does AI stand for?</h3>
+      <p class="answer">User Answer: <strong>Artificial Intelligence</strong></p>
+      <div class="btn-group">
+        <button class="btn correct">Correct</button>
+        <button class="btn incorrect">Incorrect</button>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <h3>4. Name any one Alan Walker song:</h3>
+      <p class="answer">User Answer: <strong>Faded</strong></p>
+      <div class="btn-group">
+        <button class="btn correct">Correct</button>
+        <button class="btn incorrect">Incorrect</button>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <h3>5. What is the color of the RWS logo?</h3>
+      <p class="answer">User Answer: <strong>Blue</strong></p>
+      <div class="btn-group">
+        <button class="btn correct">Correct</button>
+        <button class="btn incorrect">Incorrect</button>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
-
