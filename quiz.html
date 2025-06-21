@@ -4,39 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RWS Quiz</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- 💡 Internal CSS instead of external file -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #f0f0f0;
+      background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
+      background-size: 400% 400%;
+      animation: bgAnimation 20s ease infinite;
+    }
+
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeOut 3s forwards;
+    }
+
+    #splash h1 {
+      color: white;
+      font-size: 3em;
+      animation: zoomIn 2s ease;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 100px auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffff;
+      font-size: 28px;
+    }
+
+    label {
+      font-size: 16px;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 15px;
+      border: 1px solid #38bdf8;
+    }
+
+    input[type="text"]::placeholder {
+      color: #94a3b8;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <div id="splash">
     <h1>Royal Warriors Squad</h1>
   </div>
 
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="images/logo.png" alt="RWS Logo">
-        RWS Quiz
-      </div>
-    </div>
-  </header>
-
   <div class="container">
     <h1>RWS Knowledge Quiz</h1>
     <form action="/submit-quiz" method="POST">
       <label>1. What is the capital of Sri Lanka?</label>
-      <input type="text" name="q1"><br><br>
+      <input type="text" name="q1" placeholder="Your answer">
 
       <label>2. Who founded the Royal Warriors Squad?</label>
-      <input type="text" name="q2"><br><br>
+      <input type="text" name="q2" placeholder="Your answer">
 
       <label>3. What does AI stand for?</label>
-      <input type="text" name="q3"><br><br>
+      <input type="text" name="q3" placeholder="Your answer">
 
       <label>4. Name any one Alan Walker song:</label>
-      <input type="text" name="q4"><br><br>
+      <input type="text" name="q4" placeholder="Your answer">
 
       <label>5. What is the color of the RWS logo?</label>
-      <input type="text" name="q5"><br><br>
+      <input type="text" name="q5" placeholder="Your answer">
 
       <button type="submit" class="btn">Submit Answers</button>
     </form>
